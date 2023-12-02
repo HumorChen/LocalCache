@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=cn.humorchen.LocalCache.aspect.LocalCacheAspect,\
+  cn.humorchen.LocalCache.LocalCacheMonitor,\
+  cn.humorchen.LocalCache.config.LocalCacheGlobalConfig

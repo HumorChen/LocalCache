@@ -200,8 +200,6 @@ public class LocalCacheAspect {
                     }
                 }
                 cacheMap.put(methodKey, cache);
-                // 注册到监控去
-                LocalCacheMonitor.register(methodKey, cache, key.getLocalCache());
             } else {
                 if (isLogEnable(localCache)) {
                     log.info("本地缓存：{} 已被其他线程初始化，本次初始化取消", methodKey);

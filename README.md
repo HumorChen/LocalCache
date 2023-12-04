@@ -91,4 +91,4 @@ Cache<Object, Object> cache = LocalCacheUtil.newCacheBuilder("your cache name").
 2023-12-04 10:01:30.622 INFO [] 1 --- [ scheduling-1] c.s.r.c.localcache.LocalCacheMonitor : -----------------------本地缓存状态打印结束-----------------------
 ```
 
-有改进建议和其他需求欢迎提出，逐个处理。
+本项目将持续更新新功能与优化，目标是做一个好用的springboot项目里的缓存工具，有改进建议和功能需求欢迎提出，逐个处理。

@@ -30,7 +30,6 @@ public class LocalCacheTest {
         System.out.println(parseService.parse("1"));
         System.out.println(parseService.parse("2"));
         System.out.println(parseService.parse("1"));
-
     }
 
     /**

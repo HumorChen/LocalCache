@@ -7,8 +7,9 @@
     <name>LocalCache</name>
     <version>1.0.0-RELEASE</version>
     <description>
-        一个安全好用的springboot项目本地方法缓存，基于最高效的caffeine框架。
+        一个安全好用的springboot项目注解可配式本地方法缓存，基于最高效的caffeine框架。
     </description>
+    <url>https://github.com/HumorChen/LocalCache</url>
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -20,7 +21,7 @@
         <aspectjweaver.version>1.9.5</aspectjweaver.version>
         <hutool.version>5.7.13</hutool.version>
         <gpg.passphrase>r2kghXF4.5x72qS9</gpg.passphrase>
-        <gpg.keyname>4D368E64007F84CB7AAC8D9C2E7146337CEFB1B5</gpg.keyname>
+        <gpg.keyname>8B4FF125FAB71BCA254A40141C49C4ED6F5EA830</gpg.keyname>
         <gpg.homedir>D:\user\wfq100426\Application Data\gnupg</gpg.homedir>
     </properties>
     <licenses>

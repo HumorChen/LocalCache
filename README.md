@@ -19,6 +19,15 @@
  >
  > 支持配置每行缓存日志打印最大长度，避免打印超长数据日志
 
+## 快速引入
+```xml
+<dependency>
+  <groupId>cn.humorchen</groupId>
+  <artifactId>LocalCache</artifactId>
+  <version>1.0.0-RELEASE</version>
+</dependency>
+```
+
 ## 注解式
 
 方法有无参数、参数个数任意个都支持使用

@@ -1,3 +1,7 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=cn.humorchen.LocalCache.aspect.LocalCacheAspect,\
-  cn.humorchen.LocalCache.LocalCacheMonitor,\
-  cn.humorchen.LocalCache.config.LocalCacheGlobalConfig
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=cn.humorchen.localcache.aspect.LocalCacheAspect,\
+  cn.humorchen.localcache.aspect.LocalCacheAspect,\
+  cn.humorchen.localcache.LocalCacheMonitor,\
+  cn.humorchen.localcache.config.LocalCacheGlobalConfig,\
+  cn.humorchen.localcache.job.LocalCacheCleanerJob,\
+  cn.humorchen.localcache.LocalCacheSizeUtil,\
+  cn.humorchen.localcache.interfaces.Impl.CleanCacheMemoryTrigger

@@ -4,10 +4,10 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>cn.humorchen</groupId>
     <artifactId>LocalCache</artifactId>
-    <version>1.0.1-RELEASE</version>
     <name>LocalCache</name>
+    <version>1.0.0-RELEASE</version>
     <description>
-        一个线程、内存安全、自动异步加载缓存、命中率等状态监控的本地缓存，基于caffeine二次封装
+        一个安全好用的springboot项目本地方法缓存，基于最高效的caffeine框架。
     </description>
     <properties>
         <java.version>1.8</java.version>
@@ -19,6 +19,9 @@
         <fastjson.version>1.2.75</fastjson.version>
         <aspectjweaver.version>1.9.5</aspectjweaver.version>
         <hutool.version>5.7.13</hutool.version>
+        <gpg.passphrase>r2kghXF4.5x72qS9</gpg.passphrase>
+        <gpg.keyname>4D368E64007F84CB7AAC8D9C2E7146337CEFB1B5</gpg.keyname>
+        <gpg.homedir>D:\user\wfq100426\Application Data\gnupg</gpg.homedir>
     </properties>
     <licenses>
         <license>
@@ -33,14 +36,32 @@
         <connection>scm:git:git@github.com:HumorChen/LocalCache.git</connection>
         <developerConnection>scm:git:git@github.com:HumorChen/LocalCache.git</developerConnection>
     </scm>
+
+    <!-- 中央仓库地址配置，不需要修改 -->
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+
+        <repository>
+            <id>ossrh</id>
+            <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
     <developers>
         <developer>
             <name>humorchen</name>
             <email>humorchen99@gmail.com</email>
-            <organization>humorchen</organization>
+            <organization>cn.humorchen</organization>
         </developer>
     </developers>
     <dependencies>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>15.0</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
@@ -131,6 +152,60 @@
                         <id>repackage</id>
                         <goals>
                             <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- Source -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.2.1</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- Javadoc工具 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.10.4</version>
+                <configuration>
+                    <additionalJOptions>
+                        <additionalJOption>-Xdoclint:none</additionalJOption>
+                    </additionalJOptions>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- GPG -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <gpgArguments>
+                        <arg>--pinentry-mode</arg>
+                        <arg>loopback</arg>
+                    </gpgArguments>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
                         </goals>
                     </execution>
                 </executions>

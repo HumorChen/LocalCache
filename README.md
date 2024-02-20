@@ -1,5 +1,5 @@
 # LocalCache
- 一个安全好用的springboot项目本地方法缓存，基于最高效的caffeine框架。
+ 一个安全好用的springboot项目注解可配式本地方法缓存，基于最高效的caffeine框架。
  > 支持注解添加方法本地缓存
  >
  > 缓存支持自更新（缓存写入n秒后被调用触发异步执行更新缓存值，每n秒最多执行一次更新）
@@ -18,6 +18,15 @@
  > 支持自行定制缓存值移除监听器、缓存回收器、线程池工厂等
  >
  > 支持配置每行缓存日志打印最大长度，避免打印超长数据日志
+
+## 快速引入
+```xml
+<dependency>
+  <groupId>cn.humorchen</groupId>
+  <artifactId>LocalCache</artifactId>
+  <version>1.0.0-RELEASE</version>
+</dependency>
+```
 
 ## 注解式
 
